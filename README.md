@@ -1,97 +1,49 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# 🌟 My_app: React Native Application
 
-# Getting Started
+This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli). This application is configured for location services and mapping, utilizing the **Google Maps API**.
+
+---
+
+## ✨ Project Overview
+
+| Category | Details |
+| :--- | :--- |
+| **Framework** | React Native |
+| **Language** | TypeScript/JavaScript, Kotlin (Android Native) |
+| **Key Feature**| Integration with **Google Maps API** and device location services. |
+| **Security** | Configured to securely handle separate **Debug** and **Release** API keys using Gradle. |
+
+---
+
+## 🚀 Getting Started
 
 > **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
 
-## Step 1: Start Metro
+### 🔒 Step 1: Secure API Key Configuration (MANDATORY)
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+This project requires Google Maps API keys. For security, these keys **MUST NOT** be committed to the repository.
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+1.  **Obtain/Restrict Keys:** Get two separate, **restricted** Google Maps API keys from the Google Cloud Console.
+    * **Debug Key:** Restricted to your development SHA-1 fingerprint.
+    * **Release Key:** Restricted to your production SHA-1 fingerprint.
 
-```sh
-# Using npm
-npm start
+2.  **Create `local.properties`:** In the **`android/`** directory, create a file named `local.properties` and add your keys:
 
-# OR using Yarn
-yarn start
-```
+    ```properties
+    # local.properties (This file is ignored by Git via .gitignore)
+    MAPS_API_KEY_DEBUG="YOUR_SECURE_DEBUG_KEY_HERE"
+    MAPS_API_KEY_RELEASE="YOUR_SECURE_RELEASE_KEY_HERE"
+    ```
 
-## Step 2: Build and run your app
+3.  **Verify Manifest Placeholder:** The Android build system (Gradle) will automatically inject the correct key into the `AndroidManifest.xml` via the `${mapsApiKey}` placeholder, based on the selected build type.
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+### Step 2: Install Dependencies
 
-### Android
-
-```sh
-# Using npm
-npm run android
-
-# OR using Yarn
-yarn android
-```
-
-### iOS
-
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
-```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
-```
-
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+From the root of the project:
 
 ```sh
 # Using npm
-npm run ios
+npm install
 
 # OR using Yarn
-yarn ios
-```
-
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
-
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
-
-## Step 3: Modify your app
-
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+yarn install
