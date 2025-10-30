@@ -49,6 +49,19 @@ export const FONT_SIZE = {
   _8: RFValue(8, _DEVICE_HEIGHT),
 };
 
+export const FONT_WEIGHT = {
+  _100: '100',
+  _200: '200',
+  _300: '300',
+  _400: '400',
+  _500: '500',
+  _600: '600',
+  _700: '700',
+  _800: '800',
+  _900: '900',
+};
+
+
 // colors
 export const colors = {
   primary: '#1E90FF',
@@ -74,15 +87,4 @@ export const colors = {
 
 };
 
-export const FONT_WEIGHT = {
-  _100: '100',
-  _200: '200',
-  _300: '300',
-  _400: '400',
-  _500: '500',
-  _600: '600',
-  _700: '700',
-  _800: '800',
-  _900: '900',
-};
 

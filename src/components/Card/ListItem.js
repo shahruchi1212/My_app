@@ -13,7 +13,7 @@ const ListItem = ({ item, onPress }) => {
         >
             <View style={styles.imagePlaceholder}>
             <Image 
-                   source={item?.imageUrl ? { uri: item.imageUrl } : COMMON_IMAGES.NoImage}
+                   source={item?.imageUrl ? { uri: item?.imageUrl } : COMMON_IMAGES.NoImage}
                    style={[
                        styles.image, 
                        isPlaceholder && styles.placeholderImageStyle

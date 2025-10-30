@@ -34,7 +34,7 @@ const LoginScreen = () => {
   const isFormInvalid = !username.trim() || !password.trim();
 
   const isButtonDisabled = status === 'loading' || isFormInvalid;
-  // --------------------------
+
 
   const handleLogin = () => {
     if (status === 'loading') return; 
@@ -59,7 +59,6 @@ const LoginScreen = () => {
 
   return (
     <Layout>
- 
       <KeyboardAvoidingView
         style={screenStyles.keyboardAvoidingView}
         behavior={Platform.OS === 'ios' ? 'padding' : ''} 
@@ -177,6 +176,6 @@ const screenStyles = StyleSheet.create({
   buttonText: {
     color: colors.white,
     fontSize: FONT_SIZE._18,
-    fontWeight: 'bold',
+    fontWeight: FONT_WEIGHT._600,
   },
 });

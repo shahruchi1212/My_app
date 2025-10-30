@@ -70,7 +70,7 @@ const ListScreen = () => {
     const renderItem = ({ item }) => (
         <ListItem 
             item={item} 
-            onPress={() => navigation.navigate('Details', { userId: item._id, userName: item.username })}
+            onPress={() => navigation.navigate('Details', { userId: item?._id, userName: item?.username })}
         />
     );
 
